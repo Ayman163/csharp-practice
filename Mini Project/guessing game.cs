@@ -14,46 +14,62 @@ namespace MyFirstApp
             int number;
             int guesses;
             String response;
+            String minmax;
 
             while (playAgain)
             {
-                guess = 0;
-                guesses = 0;
-                response = "";
-                number = random.Next(min, max + 1);
-
-                while (guess != number)
+                Console.WriteLine("Welcome to my guessing game in this game you should guess a number between " + min + " - " + max);
+                Console.WriteLine(" if you want to change number of minmum and number of minmum (Y/N):");
+                minmax = Console.ReadLine();
+                minmax = minmax.ToUpper();
+                if (minmax == "Y")
                 {
-                    Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
-                    guess = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Guess: " + guess);
+                    Console.WriteLine("enter the minmum number: ");
+                    min = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("now enter the maxmun number: ");
+                    max = Convert.ToInt32(Console.ReadLine());
+                 
+                    
+                
+                    guess = 0;
+                    guesses = 0;
+                    response = "";
+                    number = random.Next(min, max + 1);
 
-                    if (guess > number)
+                    while (guess != number)
                     {
-                        Console.WriteLine(guess + " is to high!");
+                        Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
+                        guess = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Guess: " + guess);
+
+                        if (guess > number)
+                        {
+                            Console.WriteLine(guess + " is to high!");
+                        }
+                        else if (guess < number)
+                        {
+                            Console.WriteLine(guess + " is to low!");
+                        }
+                        guesses++;
                     }
-                    else if (guess < number)
+                    Console.WriteLine("Number: " + number);
+                    Console.WriteLine("YOU WIN!");
+                    Console.WriteLine("Guesses: " + guesses);
+
+                    Console.WriteLine("Would you like to play again (Y/N): ");
+                    response = Console.ReadLine();
+                    response = response.ToUpper();
+
+                    if (response == "Y")
                     {
-                        Console.WriteLine(guess + " is to low!");
+                        playAgain = true;
                     }
-                    guesses++;
+                    else
+                    {
+                        playAgain = false;
+                    }
                 }
-                Console.WriteLine("Number: " + number);
-                Console.WriteLine("YOU WIN!");
-                Console.WriteLine("Guesses: " + guesses);
-
-                Console.WriteLine("Would you like to play again (Y/N): ");
-                response = Console.ReadLine();
-                response = response.ToUpper();
-
-                if (response == "Y")
-                {
-                    playAgain = true;
-                }
-                else
-                {
-                    playAgain = false;
-                }
+                
             }
 
             Console.WriteLine("Thanks for playing! ... I guess");
