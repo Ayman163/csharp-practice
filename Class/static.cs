@@ -17,7 +17,7 @@ namespace MyFirstProgram
 
             Console.WriteLine(car1.numberOfCars1);// = 1
             Console.WriteLine(car2.numberOfCars1);// = 1
-            Console.WriteLine(car2.numberOfCars1);// = 1
+            Console.WriteLine(car3.numberOfCars1);// = 1
 
             Console.WriteLine("-------------------------------------");
 
