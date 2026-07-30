@@ -16,8 +16,8 @@ namespace MyFirstProgram
             Console.WriteLine("without static: ");
 
             Console.WriteLine(car1.numberOfCars1);// = 1
-            Console.WriteLine(car1.numberOfCars1);// = 1
-            Console.WriteLine(car1.numberOfCars1);// = 1
+            Console.WriteLine(car2.numberOfCars1);// = 1
+            Console.WriteLine(car2.numberOfCars1);// = 1
 
             Console.WriteLine("-------------------------------------");
 
