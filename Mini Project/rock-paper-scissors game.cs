@@ -21,12 +21,12 @@ namespace MyFirstApp
                 Console.WriteLine("Enter ROCK, PAPER, or SCISSORS: ");
                 player = Console.ReadLine();
                 player = player.ToUpper();
-                }
+                }Console.WriteLine("Player: " + player);Console.WriteLine("-------------------------");
                 
                 switch (random.Next(1, 4))
                 {
                     case 1:
-                    computer = "ROCk";
+                    computer = "ROCK";
                     break;
                     case 2:
                     computer = "PAPER";
@@ -84,7 +84,7 @@ namespace MyFirstApp
                     break;
                 
                 }
-                Console.WriteLine("Would you like to play agian (Y/N): ");
+                Console.WriteLine("Would you like to play again (Y/N): ");
                 answer = Console.ReadLine();
                 answer = answer.ToUpper();
                 if (answer == "Y")
