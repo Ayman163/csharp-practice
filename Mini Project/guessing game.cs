@@ -19,23 +19,23 @@ namespace MyFirstApp
             while (playAgain)
             {
                 Console.WriteLine("Welcome to my guessing game in this game you should guess a number between " + min + " - " + max);
-                Console.WriteLine(" if you want to change number of minmum and number of minmum (Y/N):");
+                Console.WriteLine("Do you want to change the minimum and maximum numbers? (Y/N):");
                 minmax = Console.ReadLine();
                 minmax = minmax.ToUpper();
                 if (minmax == "Y")
                 {
-                    Console.WriteLine("enter the minmum number: ");
+                    Console.WriteLine("Enter the minimum number: ");
                     min = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("now enter the maxmun number: ");
+                    Console.WriteLine("Now enter the maximum number: ");
                     max = Convert.ToInt32(Console.ReadLine());
-                 
+                }
                     
                 
                     guess = 0;
                     guesses = 0;
                     response = "";
                     number = random.Next(min, max + 1);
-
+                
                     while (guess != number)
                     {
                         Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
@@ -44,11 +44,11 @@ namespace MyFirstApp
 
                         if (guess > number)
                         {
-                            Console.WriteLine(guess + " is to high!");
+                            Console.WriteLine(guess + " is too high!");
                         }
                         else if (guess < number)
                         {
-                            Console.WriteLine(guess + " is to low!");
+                            Console.WriteLine(guess + " is too low!");
                         }
                         guesses++;
                     }
@@ -69,13 +69,8 @@ namespace MyFirstApp
                         playAgain = false;
                     }
                 }
-                
-            }
 
             Console.WriteLine("Thanks for playing! ... I guess");
-
-
-
         }
     }
 }
